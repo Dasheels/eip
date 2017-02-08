@@ -1,0 +1,257 @@
+#global {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px; /* largeur obligatoire pour être centré */
+}
+
+/* /////////////////////////////////       BACKGROUND        ///////////////////////////////// */
+
+html, body
+{
+	height : 100%;
+	margin : 0px;
+	padding : 0px;
+	color:black;
+	background : url("") top center;
+}
+
+html
+{
+	background-color : #D3D3D3;
+	font-family : "Trebuchet MS" , sans-serif;
+}
+
+/* /////////////////////////////////    STRUCTURE GLOBALE    ///////////////////////////////// */
+
+#conteneur_1
+{
+	min-height : 100%;
+}
+
+#conteneur_2
+{
+	width : 1000px;
+	min-width : 600px;
+	margin : auto;
+	padding-bottom : 114px;
+}
+
+#corps
+{
+	width : 100%;
+	background-color : ##D3D3D3;
+	color : #000000;
+}
+
+/* /////////////////////////////////        BANNIERE        ////////////////////////////////// */
+
+#banniere
+{
+	height : 111px;
+	/*min-width : Opx;*/
+	margin: auto;
+	background : url("logo2.png") top center;
+}
+/* /////////////////////////////////          IMAGE DROITE          ///////////////////////////////// */
+
+#image_droite
+{
+	float:right;
+	height : 620px;
+	min-width : 450px;
+	padding-top : 100px;
+	display: block;
+    margin: auto;
+	background : url("") /*top center*/;
+}
+
+/* /////////////////////////////////          IMAGE GAUCHE          ///////////////////////////////// */
+
+#image_gauche
+{
+	float:left;
+	height : 620px;
+	min-width : 450px;
+	padding-top : 100px;
+	display: block;
+    margin: auto;
+	background : url("") /*top center*/;
+}
+
+/* /////////////////////////////////          TEXTE          ///////////////////////////////// */
+
+#texte 
+{
+	padding : 20px;
+	text-align : center;
+	font-size : 15px;
+}
+
+#texte_droite
+{
+	padding : 20px;
+	text-align : right;
+	font-size : 15px;
+}
+
+.cadre
+{
+	border : 1px solid #FFFFFF;
+	background-color : #FFFFFF;
+}
+
+.titre
+{
+	height : 20px;
+	background : url("cadre.png");
+	color : ##D3D3D3;
+	text-align : center;
+	font-size : 14px;
+	font-weight : bold;
+	padding-top : 0px;
+}
+
+.marge_interne
+{
+	padding : 10px 10px 0px 10px;
+}
+
+p
+{
+	margin-top : 0px;
+}
+
+h1
+{
+	font-size : 19px;
+	margin-top : 0px;
+}
+
+h2
+{
+	font-size : 16px;
+	margin-top : 0px;
+}
+		
+a
+{
+	color : #288de8;
+	text-decoration : none;
+}
+
+a:hover
+{
+	color : #ff8000;
+}
+
+#overflow
+{
+	overflow : hidden;
+}
+
+/* /////////////////////////////////     MENU HORIZONTAL     ///////////////////////////////// */
+
+#MH
+{
+	height : 41px;
+	background : url("MH.png") center no-repeat;
+	margin : 0px;
+	padding : 0px;
+	text-align : center;
+}
+
+#MH li
+{
+	display : inline;
+	margin-right:0px;
+	margin-left:-6px;
+	text-align : center;
+}
+
+#MH a
+{
+	display : inline-block;
+	margin : 0px;
+	height : 30px;
+	padding-top : 11px;
+	padding-left :20px;
+	padding-right :20px;
+	vertical-align:top;
+	text-decoration : none;
+	font-size : 14px;
+	font-weight : bold;
+}
+
+#MH li a
+{
+	color : #FFFFFF;
+}
+
+#MH li a:hover
+{
+	background : url("MH_hover.png");
+	color : #c8c8c8;
+}
+
+/* /////////////////////////////////       BAS DE PAGE       ///////////////////////////////// */
+
+#pied_de_page
+{
+	height : 53px;
+	background : url("pied_de_page.png") center;
+	margin-top : -89px;
+	min-width : 600px;
+	text-align : center;
+	padding-top : 36px;
+	color : #000000;
+}
+
+#pied_de_page a
+{
+	color : #000000;
+}
+    .onoffswitch {
+        position: relative; width: 90px;
+        -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .onoffswitch-checkbox {
+        display: none;
+    }
+    .onoffswitch-label {
+        display: block; overflow: hidden; cursor: pointer;
+        border: 2px solid #999999; border-radius: 20px;
+    }
+    .onoffswitch-inner {
+        display: block; width: 200%; margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+    .onoffswitch-inner:before, .onoffswitch-inner:after {
+        display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+        font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+        box-sizing: border-box;
+    }
+    .onoffswitch-inner:before {
+        content: "ON";
+        padding-left: 10px;
+        background-color: #34A7C1; color: #FFFFFF;
+    }
+    .onoffswitch-inner:after {
+        content: "OFF";
+        padding-right: 10px;
+        background-color: #EEEEEE; color: #999999;
+        text-align: right;
+    }
+    .onoffswitch-switch {
+        display: block; width: 24px; margin: 3px;
+        background: #FFFFFF;
+        position: absolute; top: 0; bottom: 0;
+        right: 56px;
+        border: 2px solid #999999; border-radius: 20px;
+        transition: all 0.3s ease-in 0s; 
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        right: 0px; 
+    }

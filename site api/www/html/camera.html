@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>MJPEG-Streamer</title>
+  </head>
+  <script type="text/javascript">
+/* Copyright (C) 2007 Richard Atterer, richard©atterer.net
+   This program is free software; you can redistribute it and/or modify it
+   under the terms of the GNU General Public License, version 2. See the file
+   COPYING for details. */
+    var imageNr = 0; // Serial number of current image
+    var finished = new Array(); // References to img objects which have finished downloading
+    var paused = false;
+    function createImageLayer() {
+      var img = new Image();
+      img.style.position = "absolute";
+      img.style.zIndex = -1;
+      img.onload = imageOnload;
+      img.onclick = imageOnclick;
+      img.src = "./?action=snapshot&n=" + (++imageNr);
+      var webcam = document.getElementById("webcam");
+      webcam.insertBefore(img, webcam.firstChild);
+    }
+// Two layers are always present (except at the very beginning), to avoid flicker
+    function imageOnload() {
+      this.style.zIndex = imageNr; // Image finished, bring to front!
+      while (1 < finished.length) {
+        var del = finished.shift(); // Delete old image(s) from document
+        del.parentNode.removeChild(del);
+      }
+      finished.push(this);
+      if (!paused) createImageLayer();
+    }
+    function imageOnclick() { // Clicking on the image will pause the stream
+      paused = !paused;
+      if (!paused) createImageLayer();
+    }
+  </script>
+  <body onload="createImageLayer();">
+
+
+<div id="content">
+                <div class="container background-white">
+                    <div class="row margin-vert-30">
+                        <div class="col-md-12">
+                            <h2>Mes Salles</h2>
+                            <p>Vous trouverez ci dessous les différentes pièces de votre maisons ainsi que les équipements présents dans les pièces.</p>
+                            <hr class="margin-vert-40">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active in fade" id="faq">
+                                            <div class="panel-group" id="accordion">
+                                                <!-- Faq Item -->
+                                                <?php 
+                                                    $curl = curl_init();
+                                                    curl_setopt_array($curl, array(
+                                                    CURLOPT_RETURNTRANSFER => 1,
+                                                    CURLOPT_URL => '127.0.0.1:4567/rooms?token=' . $_SESSION["token"],
+                                                    CURLOPT_USERAGENT => 'Codular Sample cURL Request'));
+                                                    $resp = curl_exec($curl);
+                                                    $house = new House($resp);
+                                                    $house->displayCompleteHouseAsList();
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php if ($_SESSION["isAdmin"]) { ?>
+                                <div class="col-md-4">
+                                    <h3 class="margin-bottom-10">Vous souhaitez créer une nouvelle salle?</h3>
+                                    <form action="scripts/addRoom.php" method="post">Ajouter une Salle
+                                        </br>
+                                        <input type='text' name='name' class="form-control" placeholder="Nom de la Salle" required>
+                                        <select name="type" class="form-control">
+                                        <option value="bathroom">Salle de bain</option>
+                                        <option value="bedroom">Chambre</option>
+                                        <option value="livingroom">Séjour</option>
+                                        <option value="kitchen">Cuisine</option>
+                                        <option value="restroom">Toilette</option>
+                                        <option value="attic">Grenier</option>
+                                        <option value="garage">Garage</option>
+                                        </select>
+                                        <button type="submit" class="btn btn-primary btn-sm">Créer</button>
+                                    </form>
+                                </div>
+                                <?php }?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+    <div id="webcam"><noscript><img src="./?action=snapshot" /></noscript></div>
+  </body>
+</html>
