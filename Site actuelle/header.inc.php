@@ -60,12 +60,12 @@
                                         <span class="fa-home">Ma maison</span>
                                         <ul>
 
-                                            <?php if ($_SESSION["isAdmin"] == 1 || $_SESSION["isAdmin"] == true) { ?>
+                                            <?php ?>
 
                                                 <li>
                                                     <a href="compte.php">Mes compte</a>
                                                 </li>
-                                            <?php } ?>
+                                            <?php ?>
                                             <li>
                                                 <a href="maison.php">Mes Salles</a>
                                             </li>

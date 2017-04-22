@@ -28,7 +28,7 @@ function login() {
         CURLOPT_USERAGENT => 'Codular Sample cURL Request'
     ));
     $resp = curl_exec($curl);
-    if (strcmp($resp, "fail") != 0) {
+    if (strcmp($resp, "Login error") != 0) {
         session_start();
         $json = json_decode($resp, true);
         $_SESSION['user'] = $_POST['username'];

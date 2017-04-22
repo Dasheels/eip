@@ -26,7 +26,6 @@
                                                         </select>
                                                         <input type="text" class="form-control" placeholder="Nouveau nom" name="name">
                                                         <input type="text" class="form-control" placeholder="Nouveau numéro de téléphone" name="phonenumber">
-                                                        <input type="date" class="form-control" placeholder="Nouvelle date de naissance" name="birthdate">
                                                         <input type="password" class="form-control" placeholder="Nouveau mot de passe" name="password">
                                                         <input type="password" class="form-control" placeholder="Confirmation de mot de passe" name="confirmation">
                                                         <input type="checkbox" placeholder="isAdmin?" name="admin"> Compte administrateur </br>

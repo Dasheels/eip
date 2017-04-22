@@ -52,11 +52,11 @@ href="design/style.css" />
                                     <h3 class="margin-bottom-10">Ajouter un nouvel utilisateur</h3>
                                     <form action="scripts/addUser.php" method="post">
                                         </br>
-                                        <input type="text" class="form-control" placeholder="Nom" name="name">
-                                        <input type="text" class="form-control" placeholder="Numéro de téléphone" name="phonenumber">
-                                        <input type="date" class="form-control" placeholder="Date de naissance" name="birthdate">
-                                        <input type="password" class="form-control" placeholder="Mot de passe" name="password">
-                                        <input type="password" class="form-control" placeholder="Confirmation de mot de passe" name="confirmation">
+                                        <input type="text" class="form-control" placeholder="Nom" name="name" required>
+                                        <input type="text" class="form-control" placeholder="Numéro de téléphone" name="phonenumber" required>
+                                        <input type="date" class="form-control" placeholder="Date de naissance" name="birthdate" required>
+                                        <input type="password" class="form-control" placeholder="Mot de passe" name="password" required>
+                                        <input type="password" class="form-control" placeholder="Confirmation de mot de passe" name="confirmation" required>
                                         <input type="checkbox" placeholder="isAdmin?" name="admin"> Compte administrateur </br>
                                         <button type="submit" class="btn btn-primary btn-sm">Créer</button>
                                     </form>

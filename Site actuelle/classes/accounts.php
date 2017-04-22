@@ -49,7 +49,6 @@ class Accounts{
                                 echo "<ul>";
                                     echo "<li>Nom : " . $account["name"] . ".</li>";
                                     echo "<li>Numéro de téléphone : " . $account["phonenumber"] . ".</li>";
-                                    echo "<li>Date de naissance : " . $account["birthdate"] . ".</li>";
                                     echo "<li>Administrateur : " . $account["admin"] . ".</li>";
                                 echo "</ul>";
                                 if ($_SESSION["isAdmin"])

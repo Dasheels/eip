@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php if ($_SESSION["isAdmin"]) { ?>
+                                <?php?>
                                 <div class="col-md-4">
                                     <h3 class="margin-bottom-10">Vous souhaitez créer une nouvelle salle?</h3>
                                     <form action="scripts/addRoom.php" method="post">Ajouter une Salle
@@ -64,7 +64,7 @@
                                         <button type="submit" class="btn btn-primary btn-sm">Créer</button>
                                     </form>
                                 </div>
-                                <?php }?>
+                                <?php?>
                             </div>
                         </div>
                     </div>
