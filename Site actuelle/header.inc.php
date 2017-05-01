@@ -69,13 +69,10 @@
                                             <li>
                                                 <a href="maison.php">Mes Salles</a>
                                             </li>
-					    <li>
-						<a href="http://192.168.1.3:9000/camera.html" onclick="window.open(this.href); return false;">Système de surveillance</a>
-						<?php
-							shell_exec("sudo ./2start_stream.sh");
-						?>
-					    </li>
- 					    <li>
+                    					    <li>
+                    						    <a href="http://192.168.1.3:9000/camera.html" onclick="window.open(this.href); return false;">Système de surveillance</a>
+                    					    </li>
+                     					    <li>
                                                 <a href="donnée.html" onclick="window.open(this.href); return false;">Données routières</a>
                                             </li>
                                             <li>
@@ -94,7 +91,15 @@
                                     </li>
                                     <?php } ?>
                                     <li>
-                                        <a href="contact.php" class="fa-comment">Contact</a>
+                                    <span class="fa-comment">Contact</span>
+                                        <ul>
+                                            <li>
+                                                <a href="contact.php" class="fa-comment">Message</a>
+                                            </li>
+                                            <li>
+                                                <a href="FAQ.php" class="fa-comment">F.A.Q.</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <?php if (isset($_SESSION["user"])) { ?>
                                     <li>
